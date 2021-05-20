@@ -8,9 +8,11 @@ class BDPCovidOpenHelper(  context: Context?)
     : SQLiteOpenHelper(context, NOME_BASE_DADOS, null, MINHA_VERSAO_BD) {
 
     override fun onCreate(db: SQLiteDatabase?) {
-        TabelaPacientes(db!!).criaTabelas()
+        if (db != null) {
+            TabelaPacientes(db).criaTabelas()
+            TabelaPacinttesInfPorDia(db).criaTabelas()
+        }
     }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 
     }
