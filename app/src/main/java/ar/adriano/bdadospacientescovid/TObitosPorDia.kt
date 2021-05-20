@@ -5,7 +5,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
-class TabelaPacinttesInfPorDia(db: SQLiteDatabase) {
+class TObitosPorDia(db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun criaTabelas() {
         // Criar tabelas dentro da base de Dados
