@@ -9,7 +9,9 @@ class TabelaPacientes(db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun criaTabelas() {
         // Criar tabelas dentro da base de Dados
-     db.execSQL("CREATE TABLE " + NOME_TABLE + "(" + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + Nome +"TEXT UNIQUE" + ")")
+     db.execSQL("CREATE TABLE " + NOME_TABLE + "("
+             + BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+             Nome +"TEXT UNIQUE" + ")")
 
     }
 

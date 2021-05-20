@@ -9,7 +9,15 @@ class TObitosPorDia(db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun criaTabelas() {
         // Criar tabelas dentro da base de Dados
-        db.execSQL("CREATE TABLE " + NOME_TABLE + "(" + BaseColumns._ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + CABECALHO + " TEXT UNIQUE," + NOME_PACIENTE + " TEXT UNIQUE," + ID_TPACINTE + " INTEGER NOT NULL," + " FOREIGN KEY" + "(id_TPaciente)" + " REFERENCES TPaciente" + ")")
+        db.execSQL("CREATE TABLE " + NOME_TABLE + "(" +
+                BaseColumns._ID + "INTEGER PRIMARY KEY AUTOINCREMENT," +
+                CABECALHO + " TEXT UNIQUE," +
+                NOME_PACIENTE + " TEXT UNIQUE," +
+                DATA_OBITO + " INTEGER NOT NULL," +
+                ID_TPACINTE + " INTEGER NOT NULL," +
+                " FOREIGN KEY" +  ID_TPACINTE +
+                " REFERENCES " + TabelaPacientes.NOME_TABLE +
+                ")")
 
     }
 
@@ -44,6 +52,7 @@ class TObitosPorDia(db: SQLiteDatabase) {
         const val  CABECALHO = " PacientesInfectados"
         const val NOME_PACIENTE = "NomePaciente"
         const val ID_TPACINTE =  "id_TPaciente"
+        const val DATA_OBITO = "OBITO"
 
     }
 

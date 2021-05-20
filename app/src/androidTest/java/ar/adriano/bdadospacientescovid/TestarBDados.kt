@@ -33,4 +33,13 @@ class TestarBDados {
         assert(db.isOpen)
         db.close()
     }
+
+    @Test
+    fun InserirBD(){
+
+        val lerBD = BDPCovidOpenHelper(getContex())
+        val db = lerBD.writableDatabase
+        assert(db.isOpen)
+        db.close()
+    }
 }
